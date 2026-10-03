@@ -47,7 +47,6 @@ function extractAccessToken(
   return (
     responseData?.accessToken ??
     responseData?.access_token ??
-    responseData?.token?
     null
   );
 }
@@ -162,22 +161,6 @@ export async function getCurrentAdmin(): Promise<Admin> {
       }
     );
 
-  /*
-   * Backend:
-   *
-   * {
-   *   success: true,
-   *   data: {
-   *     firstName: "...",
-   *     lastName: "...",
-   *     phone: "...",
-   *     avatar: "..."
-   *   }
-   * }
-   *
-   * Bizga faqat data kerak.
-   */
-
   return response.data;
 }
 
@@ -246,4 +229,3 @@ export async function logoutAdmin(): Promise<void> {
     clearTokens();
   }
 }
-
