@@ -1,0 +1,295 @@
+.products-header {
+  width: 100%;
+  max-width: 1600px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+/* =========================================
+   LEFT
+========================================= */
+
+.products-header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  min-width: 0;
+}
+
+.products-header-left > div {
+  min-width: 0;
+}
+
+.products-header h1 {
+  margin: 0;
+
+  color: var(--text-color);
+
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 750;
+
+  letter-spacing: -0.7px;
+}
+
+.products-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.products-total {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+
+  padding: 0 11px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background: var(--surface-secondary);
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.products-header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================
+   REFRESH
+========================================= */
+
+.products-header-refresh {
+  height: 42px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 11px;
+
+  background: var(--surface-color);
+
+  color: var(--text-color);
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.products-header-refresh:hover:not(:disabled) {
+  border-color: var(--primary-color);
+
+  color: var(--primary-color);
+
+  background: var(--surface-secondary);
+
+  transform: translateY(-1px);
+}
+
+.products-header-refresh:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.products-header-refresh:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   REFRESH ANIMATION
+========================================= */
+
+.products-spin {
+  animation: productsRefreshSpin 0.9s linear infinite;
+}
+
+@keyframes productsRefreshSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   ADD PRODUCT
+========================================= */
+
+.products-add-button {
+  height: 42px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid var(--primary-color);
+  border-radius: 11px;
+
+  background: var(--primary-color);
+
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px
+    rgba(67, 168, 117, 0.18);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.products-add-button:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(67, 168, 117, 0.25);
+}
+
+.products-add-button:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 4px 10px
+    rgba(67, 168, 117, 0.16);
+}
+
+.products-add-button svg {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+html[data-theme="dark"] .products-header-refresh {
+  background: var(--surface-color);
+}
+
+html[data-theme="dark"]
+.products-header-refresh:hover:not(:disabled) {
+  background: var(--surface-secondary);
+}
+
+html[data-theme="dark"] .products-add-button {
+  box-shadow:
+    0 6px 18px
+    rgba(79, 186, 130, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+  .products-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .products-header-actions {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 560px) {
+  .products-header-left {
+    width: 100%;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .products-header-actions {
+    width: 100%;
+
+    justify-content: stretch;
+  }
+
+  .products-header-refresh,
+  .products-add-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .products-header-actions {
+    flex-direction: column;
+  }
+
+  .products-header-refresh,
+  .products-add-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,6 @@
+.page {
+  width: 100%;
+  height: calc(100vh - 58px);
+  background: var(--bg-color);
+  color: var(--text-color);
+}

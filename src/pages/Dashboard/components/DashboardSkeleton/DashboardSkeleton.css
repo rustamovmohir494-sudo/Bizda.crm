@@ -1,0 +1,301 @@
+.dashboard-skeleton {
+  position: relative;
+
+  overflow: hidden;
+
+  background: var(--secondary-color);
+
+  border-radius: 7px;
+
+  flex-shrink: 0;
+}
+
+.dashboard-skeleton::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  animation: dashboardSkeletonShimmer 1.5s infinite;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.dashboard-skeleton-card {
+  min-height: 155px;
+  height: 155px;
+  box-sizing: border-box;
+
+  padding: 20px 22px;
+
+  background: var(--surface-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-skeleton-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.skeleton-small {
+  width: 95px;
+  height: 14px;
+
+  margin-bottom: 7px;
+}
+
+.skeleton-period {
+  width: 75px;
+  height: 11px;
+}
+
+.skeleton-menu {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+}
+
+.skeleton-value {
+  width: 130px;
+  height: 35px;
+
+  margin-top: auto;
+}
+
+.dashboard-skeleton-bottom {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 7px;
+}
+
+.skeleton-percent {
+  width: 42px;
+  height: 12px;
+}
+
+.skeleton-description {
+  width: 105px;
+  height: 11px;
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.dashboard-skeleton-panel {
+  min-height: 330px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.dashboard-skeleton-panel-header {
+  min-height: 68px;
+  height: 68px;
+
+  box-sizing: border-box;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.skeleton-title {
+  width: 145px;
+  height: 15px;
+
+  margin-bottom: 7px;
+}
+
+.skeleton-subtitle {
+  width: 105px;
+  height: 10px;
+}
+
+.skeleton-button {
+  width: 75px;
+  height: 34px;
+
+  border-radius: 9px;
+}
+
+/* =========================
+   MINI METRICS
+========================= */
+
+.dashboard-skeleton-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  padding: 16px 20px 8px;
+}
+
+.dashboard-skeleton-metric {
+  min-height: 54px;
+
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 12px;
+
+  background: var(--secondary-color);
+}
+
+.skeleton-metric-icon {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 9px;
+}
+
+.skeleton-metric-value {
+  width: 45px;
+  height: 14px;
+
+  margin-bottom: 5px;
+}
+
+.skeleton-metric-label {
+  width: 60px;
+  height: 9px;
+}
+
+/* =========================
+   CHART
+========================= */
+
+.dashboard-chart-skeleton {
+  min-height: 250px;
+  height: 250px;
+
+  box-sizing: border-box;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skeleton-chart-line {
+  width: 100%;
+  height: 1px;
+
+  border-radius: 0;
+
+  opacity: 0.7;
+}
+
+/* =========================
+   ACTIVITY
+========================= */
+
+.skeleton-activity-empty {
+  min-height: 300px;
+
+  box-sizing: border-box;
+
+  padding: 30px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeleton-activity-icon {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 15px;
+
+  margin-bottom: 14px;
+}
+
+.skeleton-activity-title {
+  width: 135px;
+  height: 14px;
+
+  margin-bottom: 8px;
+}
+
+.skeleton-activity-text {
+  width: 210px;
+  height: 11px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes dashboardSkeletonShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html[data-theme="dark"] .dashboard-skeleton::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.07),
+    transparent
+  );
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .dashboard-skeleton-card {
+    height: auto;
+    min-height: 155px;
+  }
+
+  .dashboard-skeleton-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-skeleton::after {
+    animation: none;
+  }
+}

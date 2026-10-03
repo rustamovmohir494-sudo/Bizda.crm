@@ -1,0 +1,383 @@
+.media-edit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(15, 25, 20, 0.48);
+  backdrop-filter: blur(5px);
+
+  animation: mediaEditOverlayIn 0.2s ease;
+}
+
+.media-edit-modal {
+  width: min(520px, 100%);
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  background: var(--surface-color);
+  color: var(--text-color);
+
+  box-shadow:
+    0 24px 70px rgba(18, 40, 30, 0.2);
+
+  animation: mediaEditModalIn 0.24s ease;
+}
+
+.media-edit-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.media-edit-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.media-edit-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: rgba(67, 168, 117, 0.12);
+  color: var(--primary-color);
+}
+
+.media-edit-title h2 {
+  margin: 0;
+
+  color: var(--text-color);
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.media-edit-title p {
+  margin: 4px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-edit-close {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.media-edit-close:hover {
+  color: var(--text-color);
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+  transform: rotate(4deg);
+}
+
+.media-edit-preview {
+  position: relative;
+
+  height: 210px;
+  margin: 20px 22px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+
+  background: var(--surface-secondary);
+}
+
+.media-edit-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.media-edit-preview-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+.media-edit-main-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 9px;
+
+  border-radius: 8px;
+
+  background: var(--primary-color);
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.media-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  padding: 20px 22px 22px;
+}
+
+.media-edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.media-edit-form label > span {
+  color: var(--text-color);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.media-edit-form label > span b {
+  color: var(--primary-color);
+}
+
+.media-edit-form input {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: var(--input-bg);
+  color: var(--text-color);
+
+  font: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.media-edit-form input::placeholder {
+  color: var(--text-secondary);
+}
+
+.media-edit-form input:focus {
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+
+  box-shadow:
+    0 0 0 3px rgba(67, 168, 117, 0.1);
+}
+
+.media-edit-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  min-height: 20px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.media-edit-meta-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.media-edit-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding-top: 4px;
+}
+
+.media-edit-cancel,
+.media-edit-save {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  border-radius: 10px;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.media-edit-cancel {
+  border: 1px solid var(--border-color);
+
+  background: var(--surface-secondary);
+  color: var(--text-color);
+}
+
+.media-edit-cancel:hover {
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+}
+
+.media-edit-save {
+  border: 1px solid var(--primary-color);
+
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+.media-edit-save:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.media-edit-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+html[data-theme="dark"] .media-edit-overlay {
+  background: rgba(0, 0, 0, 0.68);
+}
+
+html[data-theme="dark"] .media-edit-modal {
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.42);
+}
+
+@keyframes mediaEditOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mediaEditModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .media-edit-overlay {
+    padding: 14px;
+  }
+
+  .media-edit-modal {
+    max-height: calc(100vh - 28px);
+    border-radius: 15px;
+  }
+
+  .media-edit-header,
+  .media-edit-form {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .media-edit-preview {
+    height: 180px;
+    margin-left: 17px;
+    margin-right: 17px;
+  }
+
+  .media-edit-footer {
+    flex-direction: column-reverse;
+  }
+
+  .media-edit-cancel,
+  .media-edit-save {
+    width: 100%;
+  }
+}

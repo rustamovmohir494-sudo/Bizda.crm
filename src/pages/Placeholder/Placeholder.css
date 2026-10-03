@@ -1,0 +1,61 @@
+.placeholder-page {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.placeholder-icon {
+  width: 78px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 24px;
+
+  background: var(--surface-secondary);
+  color: var(--primary-color);
+}
+
+.placeholder-page h2 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 23px;
+}
+
+.placeholder-page p {
+  margin: 9px 0 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.placeholder-page button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 9px;
+
+  background: var(--primary-color);
+  color: #ffffff;
+
+  cursor: pointer;
+  font-size: 13px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.placeholder-page button:hover {
+  background: var(--primary-hover);
+}
+
+.placeholder-page button:active {
+  transform: scale(0.97);
+}

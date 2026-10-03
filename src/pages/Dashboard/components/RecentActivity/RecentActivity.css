@@ -1,0 +1,146 @@
+.recent-activity-panel {
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.recent-activity-header {
+  min-height: 68px;
+  height: 68px;
+  box-sizing: border-box;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.recent-activity-header h2 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+
+  color: var(--text-color);
+}
+
+.recent-activity-header p {
+  margin: 3px 0 0;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  color: var(--muted-text-color);
+}
+
+/* =========================
+   MENU
+========================= */
+
+.recent-activity-menu {
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--muted-text-color);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.recent-activity-menu:hover {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.activity-empty {
+  min-height: 300px;
+
+  flex: 1;
+
+  padding: 30px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.activity-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: rgba(67, 168, 117, 0.1);
+  color: var(--primary-color);
+}
+
+.activity-empty h3 {
+  margin: 14px 0 5px;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 21px;
+
+  color: var(--text-color);
+}
+
+.activity-empty p {
+  max-width: 250px;
+
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  color: var(--muted-text-color);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+  .recent-activity-header {
+    padding: 16px;
+  }
+
+  .activity-empty {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}

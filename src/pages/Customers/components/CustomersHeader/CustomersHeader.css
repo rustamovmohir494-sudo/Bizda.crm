@@ -1,0 +1,137 @@
+.customers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.customers-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.customers-heading-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(67, 168, 117, 0.11);
+  color: var(--primary-color);
+}
+
+.customers-heading h1 {
+  margin: 0;
+
+  color: var(--text-color);
+
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.customers-heading p {
+  margin: 5px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.customers-refresh-button {
+  min-width: 96px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background: var(--surface-color);
+  color: var(--text-color);
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.customers-refresh-button:hover:not(:disabled) {
+  border-color: rgba(67, 168, 117, 0.35);
+
+  background: rgba(67, 168, 117, 0.06);
+  color: var(--primary-color);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 12px rgba(67, 168, 117, 0.08);
+}
+
+.customers-refresh-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.customers-refresh-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.customers-refresh-icon {
+  flex: 0 0 auto;
+}
+
+.customers-refresh-icon.spinning {
+  animation: customers-refresh-spin 0.8s linear infinite;
+}
+
+@keyframes customers-refresh-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .customers-header {
+    align-items: flex-start;
+  }
+
+  .customers-heading h1 {
+    font-size: 19px;
+  }
+
+  .customers-heading p {
+    font-size: 11px;
+  }
+
+  .customers-refresh-button {
+    min-width: 38px;
+    width: 38px;
+    padding: 0;
+  }
+
+  .customers-refresh-button span {
+    display: none;
+  }
+}
+

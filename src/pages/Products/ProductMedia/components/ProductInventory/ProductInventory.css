@@ -1,0 +1,80 @@
+.product-statuses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.product-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--surface-secondary);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.product-switch-row > span {
+  color: var(--text-color);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.product-switch {
+  width: 42px;
+  height: 23px;
+  border: 0;
+  border-radius: 20px;
+  padding: 3px;
+  background: var(--border-color);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+  flex: 0 0 42px;
+}
+
+.product-switch > span {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--surface-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.product-switch.active {
+  background: var(--primary-color);
+  box-shadow: 0 3px 10px rgba(67, 168, 117, 0.2);
+}
+
+.product-switch.active > span {
+  transform: translateX(19px);
+}
+
+.product-switch:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 800px) {
+  .product-statuses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-statuses {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .product-switch-row {
+    padding: 12px 13px;
+  }
+}

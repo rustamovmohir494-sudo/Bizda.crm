@@ -1,0 +1,163 @@
+/* =========================================================
+   DELETE MODAL
+========================================================= */
+
+.brand-delete-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1100;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(18, 52, 59, 0.35);
+
+    box-sizing: border-box;
+}
+
+.brand-delete-modal {
+    position: relative;
+
+    width: min(440px, 100%);
+
+    padding: 30px;
+
+    border: 1px solid var(--border-color, #e3e9e6);
+    border-radius: 18px;
+
+    background: var(--surface-color);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.18);
+
+    box-sizing: border-box;
+
+    animation: brand-delete-in 0.2s ease;
+}
+
+@keyframes brand-delete-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.brand-delete-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--surface-secondary);
+    color: var(--text-color);
+
+    cursor: pointer;
+}
+
+.brand-delete-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(220, 91, 91, 0.10);
+
+    color: #dc5b5b;
+}
+
+.brand-delete-modal h2 {
+    margin: 0 0 9px;
+
+    font-size: 22px;
+    line-height: 1.3;
+
+    color: var(--text-color);
+}
+
+.brand-delete-modal > p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: var(--text-muted, #718078);
+}
+
+.brand-delete-modal > p strong {
+    color: var(--text-color);
+}
+
+.brand-delete-actions {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 9px;
+}
+
+.brand-delete-confirm {
+    border: 1px solid #dc5b5b;
+
+    background: #dc5b5b;
+    color: #fff;
+}
+
+.brand-delete-confirm:hover {
+    background: #c94e4e;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .brand-delete-overlay {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="dark"] .brand-delete-modal {
+    border-color: #314039;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+    .brand-delete-overlay {
+        padding: 18px;
+    }
+
+    .brand-delete-modal {
+        padding: 24px;
+    }
+}

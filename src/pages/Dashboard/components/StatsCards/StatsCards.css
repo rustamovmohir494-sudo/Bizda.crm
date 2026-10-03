@@ -1,0 +1,212 @@
+.stat-card {
+  min-width: 0;
+  min-height: 155px;
+  height: 155px;
+  box-sizing: border-box;
+
+  padding: 20px 22px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(31, 68, 52, 0.06);
+}
+
+/* =========================
+   TOP
+========================= */
+
+.stat-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stat-title {
+  display: block;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+
+  color: var(--text-color);
+}
+
+.stat-period {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  color: var(--muted-text-color);
+}
+
+.stat-menu {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--muted-text-color);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.stat-menu:hover {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.stat-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(67, 168, 117, 0.1);
+  color: var(--primary-color);
+}
+
+.stat-orders-icon {
+  width: 24px;
+  height: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--primary-color);
+}
+
+/* =========================
+   VALUE
+========================= */
+
+.stat-value {
+  margin-top: auto;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+
+  color: var(--text-color);
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.stat-bottom {
+  min-height: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 3px;
+}
+
+.stat-positive,
+.stat-negative {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.stat-positive {
+  color: var(--primary-color);
+}
+
+.stat-negative {
+  color: #e45c5c;
+}
+
+.stat-description {
+  font-size: 12px;
+  line-height: 18px;
+
+  color: var(--muted-text-color);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html[data-theme="dark"] .stat-card {
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .stat-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .stat-card {
+    height: auto;
+    min-height: 155px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-value {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .stat-menu {
+    transition: none;
+  }
+}

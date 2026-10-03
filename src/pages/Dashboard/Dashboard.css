@@ -1,0 +1,108 @@
+.dashboard-page {
+  min-height: calc(100vh - 68px);
+  box-sizing: border-box;
+
+  padding: 26px 28px 40px;
+
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+
+  min-height: 155px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
+  gap: 18px;
+
+  min-height: 330px;
+
+  margin-top: 18px;
+}
+
+/* =========================
+   COMMON PANEL
+========================= */
+
+.dashboard-panel {
+  min-width: 0;
+
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  box-shadow: 0 8px 24px rgba(31, 68, 52, 0.04);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dashboard-panel:hover {
+  box-shadow: 0 12px 30px rgba(31, 68, 52, 0.07);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard-page {
+    padding: 20px 18px 32px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .dashboard-grid {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-page {
+    padding: 16px 12px 28px;
+  }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html[data-theme="dark"] .dashboard-panel {
+  box-shadow: none;
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-panel,
+  .dashboard-page {
+    transition: none;
+  }
+}

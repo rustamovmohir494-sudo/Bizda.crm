@@ -1,0 +1,415 @@
+.media-edit-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(15, 25, 21, 0.35);
+  backdrop-filter: blur(3px);
+  animation: mediaEditBackdropIn 0.2s ease;
+}
+
+.media-edit-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+
+  width: min(460px, 92vw);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--surface-color);
+  border-left: 1px solid var(--border-color);
+
+  box-shadow: -12px 0 40px rgba(20, 45, 35, 0.14);
+
+  animation: mediaEditPanelIn 0.28s ease;
+}
+
+.media-edit-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 25px 24px 21px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.media-edit-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+
+  color: var(--primary-color);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media-edit-header h2 {
+  margin: 0;
+
+  color: var(--text-color);
+
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.media-edit-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+.media-edit-close {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--border-color);
+  border-radius: 11px;
+
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.media-edit-close:hover {
+  color: var(--text-color);
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+  transform: rotate(4deg);
+}
+
+.media-edit-content {
+  flex: 1;
+  overflow-y: auto;
+
+  padding: 22px 24px 30px;
+}
+
+.media-edit-preview {
+  position: relative;
+
+  width: 100%;
+  height: 270px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+
+  background: var(--surface-secondary);
+}
+
+.media-edit-preview img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  padding: 18px;
+}
+
+.media-edit-main-badge {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 7px 10px;
+
+  border-radius: 9px;
+
+  background: var(--primary-color);
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow: 0 5px 15px rgba(67, 168, 117, 0.25);
+}
+
+.media-edit-section {
+  margin-top: 24px;
+}
+
+.media-edit-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 17px;
+
+  color: var(--text-color);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.media-edit-section-title svg {
+  color: var(--primary-color);
+}
+
+.media-edit-field {
+  margin-bottom: 17px;
+}
+
+.media-edit-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--text-color);
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.media-edit-field input {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: var(--input-bg);
+  color: var(--text-color);
+
+  font: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.media-edit-field input::placeholder {
+  color: var(--text-secondary);
+}
+
+.media-edit-field input:focus {
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+  box-shadow: 0 0 0 3px rgba(67, 168, 117, 0.1);
+}
+
+.media-edit-url {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px 13px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  word-break: break-all;
+}
+
+.media-edit-position {
+  width: 100%;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  background: var(--surface-secondary);
+  color: var(--text-color);
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.media-edit-main-info {
+  display: flex;
+  gap: 11px;
+
+  margin-top: 8px;
+  padding: 14px;
+
+  border: 1px solid rgba(67, 168, 117, 0.2);
+  border-radius: 12px;
+
+  background: rgba(67, 168, 117, 0.08);
+  color: var(--primary-color);
+}
+
+.media-edit-main-info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.media-edit-main-info strong {
+  display: block;
+
+  color: var(--text-color);
+
+  font-size: 13px;
+}
+
+.media-edit-main-info p {
+  margin: 4px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.media-edit-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 17px 24px;
+
+  border-top: 1px solid var(--border-color);
+
+  background: var(--surface-color);
+}
+
+.media-edit-cancel,
+.media-edit-save {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border-radius: 10px;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.media-edit-cancel {
+  border: 1px solid var(--border-color);
+
+  background: var(--surface-secondary);
+  color: var(--text-color);
+}
+
+.media-edit-cancel:hover {
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+}
+
+.media-edit-save {
+  border: 1px solid var(--primary-color);
+
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.media-edit-save:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+@keyframes mediaEditPanelIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mediaEditBackdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+html[data-theme="dark"] .media-edit-backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 600px) {
+  .media-edit-panel {
+    width: 100%;
+  }
+
+  .media-edit-header {
+    padding: 20px;
+  }
+
+  .media-edit-content {
+    padding: 18px 20px 25px;
+  }
+
+  .media-edit-footer {
+    padding: 15px 20px;
+  }
+
+  .media-edit-preview {
+    height: 230px;
+  }
+}

@@ -1,0 +1,86 @@
+.customer-lock-button {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.customer-lock-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.customer-lock-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.customer-lock-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+/* Active */
+
+.customer-lock-active {
+  border: 1px solid rgba(67, 168, 117, 0.22);
+
+  background: rgba(67, 168, 117, 0.09);
+  color: var(--primary-color);
+}
+
+.customer-lock-active:hover:not(:disabled) {
+  border-color: rgba(67, 168, 117, 0.38);
+
+  background: rgba(67, 168, 117, 0.15);
+
+  box-shadow: 0 4px 12px rgba(67, 168, 117, 0.1);
+}
+
+/* Inactive */
+
+.customer-lock-inactive {
+  border: 1px solid var(--border-color);
+
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+}
+
+.customer-lock-inactive:hover:not(:disabled) {
+  border-color: var(--primary-color);
+
+  background: rgba(67, 168, 117, 0.07);
+  color: var(--primary-color);
+}
+
+/* Loading */
+
+.customer-lock-spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+
+  border-radius: 50%;
+
+  animation: customer-lock-spin 0.7s linear infinite;
+}
+
+@keyframes customer-lock-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

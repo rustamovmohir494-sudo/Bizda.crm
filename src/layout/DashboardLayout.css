@@ -1,0 +1,30 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f9fafb;
+  transition: background 0.3s ease;
+}
+
+.dashboard-main {
+  margin-left: 160px;
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+.dashboard-content {
+  min-height: calc(100vh - 58px);
+  background: #f9fafb;
+  transition: background 0.3s ease;
+}
+
+/* 🌙 Dark Mode */
+.dark .dashboard-layout {
+  background: #111827;
+}
+
+.dark .dashboard-main {
+  background: #111827;
+}
+
+.dark .dashboard-content {
+  background: #111827;
+}

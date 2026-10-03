@@ -1,0 +1,6 @@
+@import "./styles/BrandsBase.css";
+@import "./styles/BrandsTable.css";
+@import "./styles/BrandsActions.css";
+@import "./styles/BrandAddPanel.css";
+@import "./styles/BrandEditPanel.css";
+@import "./styles/BrandDeleteModal.css";

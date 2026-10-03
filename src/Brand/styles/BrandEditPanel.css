@@ -1,0 +1,656 @@
+/* =========================================================
+   EDIT PANEL OVERLAY
+========================================================= */
+
+.brand-edit-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background: rgba(18, 52, 59, 0.28);
+}
+
+.brand-edit-panel {
+    width: 50%;
+    height: 100%;
+
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--surface-color);
+
+    border-left: 1px solid var(--border-color, #e3e9e6);
+
+    box-shadow:
+        -15px 0 45px rgba(31, 53, 45, 0.14);
+
+    animation: brand-edit-slide 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+.brand-edit-panel.size-50 {
+    width: 50%;
+}
+
+.brand-edit-panel.size-75 {
+    width: 75%;
+}
+
+.brand-edit-panel.size-100 {
+    width: 100%;
+}
+
+@keyframes brand-edit-slide {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   EDIT HEADER
+========================================================= */
+
+.brand-edit-header {
+    min-height: 100px;
+
+    padding: 24px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--border-color, #e3e9e6);
+
+    box-sizing: border-box;
+}
+
+.brand-edit-header h2 {
+    margin: 4px 0 5px;
+
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+.brand-edit-header p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: var(--text-muted, #718078);
+}
+
+.brand-edit-header p strong {
+    color: var(--text-color);
+}
+
+.brand-edit-close {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--border-color, #dfe7e2);
+    border-radius: 10px;
+
+    background: var(--surface-secondary);
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.brand-edit-close:hover {
+    border-color: var(--primary-color);
+
+    background: var(--surface-color);
+
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   PANEL SIZE SELECTOR
+========================================================= */
+
+.brand-edit-size {
+    min-height: 62px;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--border-color, #e3e9e6);
+
+    box-sizing: border-box;
+}
+
+.brand-edit-size > span {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--text-color);
+}
+
+.brand-edit-size > div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.brand-edit-size button {
+    min-width: 52px;
+    height: 34px;
+
+    padding: 0 11px;
+
+    border: 1px solid var(--border-color, #dfe7e2);
+    border-radius: 9px;
+
+    background: var(--surface-color);
+    color: var(--text-color);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.brand-edit-size button:hover {
+    border-color: var(--primary-color);
+
+    color: var(--primary-color);
+}
+
+.brand-edit-size button.active {
+    border-color: var(--primary-color);
+
+    background: var(--primary-color);
+    color: #fff;
+}
+
+
+/* =========================================================
+   EDIT BODY
+========================================================= */
+
+.brand-edit-body {
+    flex: 1;
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 28px 30px 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EDIT PREVIEW
+========================================================= */
+
+.brand-edit-preview {
+    min-height: 92px;
+
+    margin-bottom: 25px;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid var(--border-color, #e3e9e6);
+    border-radius: 14px;
+
+    background: var(--surface-secondary);
+
+    box-sizing: border-box;
+}
+
+.brand-edit-preview .brand-edit-logo {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+    max-width: 62px;
+
+    flex: 0 0 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border-color, #e3e9e6);
+    border-radius: 13px;
+
+    background: var(--surface-color);
+
+    color: var(--primary-color);
+
+    box-sizing: border-box;
+}
+
+.brand-edit-preview .brand-edit-logo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+.brand-edit-preview > div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.brand-edit-preview > div:last-child strong {
+    font-size: 17px;
+    line-height: 1.3;
+
+    color: var(--text-color);
+}
+
+.brand-edit-preview > div:last-child span {
+    font-size: 13px;
+    line-height: 1.3;
+
+    color: var(--text-muted, #718078);
+}
+
+
+/* =========================================================
+   EDIT FORM
+========================================================= */
+
+.brand-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 19px;
+}
+
+.brand-field > span {
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 600;
+
+    color: var(--text-color);
+}
+
+.brand-field input,
+.brand-field textarea {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border-color, #dfe7e2);
+    border-radius: 11px;
+
+    outline: none;
+
+    background: var(--surface-color);
+    color: var(--text-color);
+
+    font-family: inherit;
+    font-size: 15px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.brand-field input {
+    height: 48px;
+}
+
+.brand-field textarea {
+    min-height: 120px;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    resize: vertical;
+}
+
+.brand-field input:focus,
+.brand-field textarea:focus {
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 3px rgba(78, 166, 116, 0.12);
+}
+
+.brand-field input::placeholder,
+.brand-field textarea::placeholder {
+    color: var(--text-muted, #87948d);
+}
+
+
+/* =========================================================
+   ACTIVE STATUS
+========================================================= */
+
+.brand-active-field {
+    min-height: 68px;
+
+    margin-top: 8px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border: 1px solid var(--border-color, #e3e9e6);
+    border-radius: 12px;
+
+    background: var(--surface-secondary);
+
+    box-sizing: border-box;
+}
+
+.brand-active-field > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.brand-active-field strong {
+    font-size: 14px;
+
+    color: var(--text-color);
+}
+
+.brand-active-field > div span {
+    font-size: 12px;
+
+    color: var(--text-muted, #718078);
+}
+
+.brand-switch {
+    width: 46px;
+    height: 26px;
+
+    min-width: 46px;
+
+    padding: 3px;
+
+    border: 0;
+    border-radius: 20px;
+
+    background: #b8c2bd;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+.brand-switch > span {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.brand-switch.active {
+    background: var(--primary-color);
+}
+
+.brand-switch.active > span {
+    transform: translateX(20px);
+}
+
+
+/* =========================================================
+   EDIT ERROR
+========================================================= */
+
+.brand-edit-error {
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(220, 91, 91, 0.25);
+    border-radius: 10px;
+
+    background: rgba(220, 91, 91, 0.08);
+
+    color: #dc5b5b;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   EDIT FOOTER
+========================================================= */
+
+.brand-edit-footer {
+    margin-top: 28px;
+
+    padding-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    border-top: 1px solid var(--border-color, #e3e9e6);
+}
+
+.brand-edit-cancel,
+.brand-edit-save,
+.brand-delete-confirm {
+    min-height: 44px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+.brand-edit-cancel {
+    border: 1px solid var(--border-color, #dfe7e2);
+
+    background: var(--surface-color);
+    color: var(--text-color);
+}
+
+.brand-edit-cancel:hover {
+    background: var(--surface-secondary);
+}
+
+.brand-edit-save {
+    border: 1px solid var(--primary-color);
+
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.brand-edit-save:hover {
+    background: #429665;
+}
+
+.brand-edit-save:disabled,
+.brand-edit-cancel:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.brand-button-spinner {
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation:
+        brand-button-spin 0.7s linear infinite;
+}
+
+@keyframes brand-button-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .brand-edit-overlay {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="dark"] .brand-edit-panel {
+    border-color: #314039;
+}
+
+html[data-theme="dark"] .brand-edit-header,
+html[data-theme="dark"] .brand-edit-size,
+html[data-theme="dark"] .brand-edit-footer {
+    border-color: #314039;
+}
+
+html[data-theme="dark"] .brand-edit-preview,
+html[data-theme="dark"] .brand-active-field {
+    border-color: #314039;
+}
+
+html[data-theme="dark"] .brand-field input,
+html[data-theme="dark"] .brand-field textarea {
+    border-color: #314039;
+}
+
+html[data-theme="dark"] .brand-edit-close {
+    border-color: #314039;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+    .brand-edit-panel.size-50 {
+        width: 75%;
+    }
+
+    .brand-edit-panel.size-75 {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-edit-panel.size-50,
+    .brand-edit-panel.size-75,
+    .brand-edit-panel.size-100 {
+        width: 100%;
+    }
+
+    .brand-edit-header,
+    .brand-edit-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .brand-edit-size {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .brand-edit-size > span {
+        display: none;
+    }
+
+    .brand-edit-footer {
+        flex-direction: column-reverse;
+    }
+
+    .brand-edit-cancel,
+    .brand-edit-save {
+        width: 100%;
+    }
+}

@@ -1,0 +1,181 @@
+.weekly-report-panel {
+  min-height: 330px;
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.weekly-report-header {
+  min-height: 68px;
+  box-sizing: border-box;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.weekly-report-header h2 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+
+  color: var(--text-color);
+}
+
+.weekly-report-header p {
+  margin: 3px 0 0;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  color: var(--muted-text-color);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.weekly-report-button {
+  height: 34px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background: var(--secondary-color);
+  color: var(--text-color);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.weekly-report-button:hover {
+  border-color: var(--primary-color);
+}
+
+/* =========================
+   MINI METRICS
+========================= */
+
+.weekly-mini-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  padding: 16px 20px 8px;
+}
+
+.weekly-mini-metric {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  background: var(--secondary-color);
+}
+
+.weekly-mini-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(67, 168, 117, 0.1);
+  color: var(--primary-color);
+}
+
+.weekly-mini-metric strong {
+  display: block;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+
+  color: var(--text-color);
+
+  font-variant-numeric: tabular-nums;
+}
+
+.weekly-mini-metric span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 11px;
+  line-height: 16px;
+
+  color: var(--muted-text-color);
+}
+
+/* =========================
+   CHART
+========================= */
+
+.weekly-chart {
+  min-height: 220px;
+
+  padding: 8px 20px 18px;
+
+  overflow: hidden;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .weekly-mini-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-report-header {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .weekly-report-header {
+    padding: 16px;
+  }
+
+  .weekly-mini-metrics {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .weekly-chart {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

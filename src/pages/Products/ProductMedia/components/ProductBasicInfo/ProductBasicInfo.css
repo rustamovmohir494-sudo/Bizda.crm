@@ -1,0 +1,136 @@
+.product-form-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(28, 52, 42, 0.04);
+}
+
+.product-form-card-header {
+  margin-bottom: 22px;
+}
+
+.product-form-card-header h2 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.product-form-card-header p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.product-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-field-full {
+  grid-column: 1 / -1;
+}
+
+.product-field > span {
+  color: var(--text-color);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.product-field > span b {
+  color: var(--primary-color);
+}
+
+.product-field input,
+.product-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 11px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-field input::placeholder,
+.product-field textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.product-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.product-field input:focus,
+.product-field textarea:focus {
+  border-color: var(--primary-color);
+  background: var(--surface-color);
+  box-shadow: 0 0 0 3px rgba(67, 168, 117, 0.1);
+}
+
+.product-field input:hover,
+.product-field textarea:hover {
+  border-color: var(--primary-color);
+}
+
+html[data-theme="dark"] .product-form-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="dark"] .product-field input:focus,
+html[data-theme="dark"] .product-field textarea:focus {
+  box-shadow: 0 0 0 3px rgba(79, 186, 130, 0.12);
+}
+
+@media (max-width: 700px) {
+  .product-form-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .product-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-field-full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-form-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .product-form-card-header {
+    margin-bottom: 18px;
+  }
+
+  .product-form-card-header h2 {
+    font-size: 17px;
+  }
+
+  .product-field input,
+  .product-field textarea {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+}

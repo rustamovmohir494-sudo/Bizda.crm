@@ -1,0 +1,161 @@
+.customers-skeleton {
+  width: 100%;
+  overflow: hidden;
+
+  background: var(--surface-color);
+}
+
+.customers-skeleton-header {
+  height: 52px;
+
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    1.5fr
+    0.7fr
+    1fr
+    0.8fr
+    0.5fr;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 0 20px;
+
+  background: var(--surface-secondary);
+}
+
+.customers-skeleton-header span {
+  width: 55px;
+  height: 9px;
+
+  border-radius: 5px;
+
+  background: var(--border-color);
+
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.customers-skeleton-row {
+  min-width: 950px;
+  height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    1.5fr
+    0.7fr
+    1fr
+    0.8fr
+    0.5fr;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 10px 20px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.customers-skeleton-customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skeleton-avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  border-radius: 50%;
+
+  background: var(--surface-secondary);
+
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-customer-info,
+.skeleton-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.skeleton-line {
+  display: block;
+
+  height: 9px;
+
+  border-radius: 5px;
+
+  background: var(--surface-secondary);
+
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-name-line {
+  width: 125px;
+}
+
+.skeleton-id-line {
+  width: 75px;
+  height: 7px;
+}
+
+.skeleton-email-line {
+  width: 155px;
+}
+
+.skeleton-phone-line {
+  width: 100px;
+  height: 7px;
+}
+
+.skeleton-order-line {
+  width: 35px;
+}
+
+.skeleton-money-line {
+  width: 85px;
+}
+
+.skeleton-status {
+  width: 60px;
+  height: 25px;
+
+  border-radius: 7px;
+
+  background: var(--surface-secondary);
+
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-action {
+  width: 36px;
+  height: 36px;
+
+  margin: auto;
+
+  border-radius: 9px;
+
+  background: var(--surface-secondary);
+
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+

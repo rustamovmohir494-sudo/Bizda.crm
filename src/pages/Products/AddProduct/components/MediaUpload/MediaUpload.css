@@ -1,0 +1,241 @@
+.media-upload {
+  margin-bottom: 24px;
+  padding: 20px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+
+  background: var(--surface-color);
+
+  box-shadow:
+    0 4px 20px
+    rgba(25, 55, 43, 0.04);
+}
+
+/* ================================
+   TITLE
+================================ */
+
+.media-upload-title {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.media-upload-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid
+    rgba(67, 168, 117, 0.16);
+
+  border-radius: 11px;
+
+  background: rgba(
+    67,
+    168,
+    117,
+    0.12
+  );
+
+  color: var(--primary-color);
+}
+
+.media-upload-title h2 {
+  margin: 0 0 3px;
+
+  color: var(--text-color);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.media-upload-title p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.media-upload-form {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1.5fr)
+    minmax(180px, 1fr)
+    auto;
+
+  align-items: end;
+
+  gap: 13px;
+}
+
+/* ================================
+   INPUT GROUP
+================================ */
+
+.media-input-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.media-input-group label {
+  color: var(--text-color);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.media-input-group input {
+  width: 100%;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: var(--input-bg);
+  color: var(--text-color);
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.media-input-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.media-input-group input:focus {
+  border-color: var(--primary-color);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(67, 168, 117, 0.1);
+}
+
+/* ================================
+   ADD BUTTON
+================================ */
+
+.media-add-btn {
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: var(--primary-color);
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.media-add-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+
+  transform: translateY(-1px);
+}
+
+.media-add-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ================================
+   SPINNER
+================================ */
+
+.media-spinner {
+  animation:
+    mediaSpin 0.8s linear infinite;
+}
+
+@keyframes mediaSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   DARK MODE
+================================ */
+
+html[data-theme="dark"] .media-upload {
+  box-shadow:
+    0 8px 28px
+    rgba(0, 0, 0, 0.16);
+}
+
+html[data-theme="dark"] .media-upload-icon {
+  background: rgba(
+    79,
+    186,
+    130,
+    0.14
+  );
+
+  border-color: rgba(
+    79,
+    186,
+    130,
+    0.22
+  );
+}
+
+html[data-theme="dark"] .media-input-group input {
+  background: var(--input-bg);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 850px) {
+  .media-upload-form {
+    grid-template-columns: 1fr;
+  }
+
+  .media-add-btn {
+    width: 100%;
+  }
+}

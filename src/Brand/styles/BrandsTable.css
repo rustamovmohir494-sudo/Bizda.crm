@@ -1,0 +1,389 @@
+/* =========================================================
+   TABLE
+========================================================= */
+
+.brand-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.brand-table {
+    width: 100%;
+    min-width: 1000px;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.brand-table thead {
+    background: var(--surface-secondary);
+}
+
+.brand-table th {
+    height: 58px;
+
+    padding: 0 28px;
+
+    text-align: left;
+    white-space: nowrap;
+
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+
+    color: var(--text-muted, #718078);
+
+    border-bottom: 1px solid var(--border-color, #e3e9e6);
+}
+
+.brand-table td {
+    height: 92px;
+
+    padding: 14px 28px;
+
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: var(--text-color);
+
+    border-bottom: 1px solid var(--border-color, #edf1ef);
+
+    vertical-align: middle;
+}
+
+.brand-table tbody tr {
+    transition:
+        background 0.18s ease;
+}
+
+.brand-table tbody tr:hover {
+    background: var(--surface-secondary);
+}
+
+.brand-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   BRAND INFO
+========================================================= */
+
+.brand-info {
+    min-width: 250px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-logo {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(78, 166, 116, 0.16);
+
+    background: var(--surface-secondary);
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    padding: 8px;
+}
+
+.brand-logo-fallback {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary-color);
+}
+
+.brand-logo-fallback.visible {
+    display: flex;
+}
+
+.brand-name-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.brand-name-wrapper strong {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+.brand-name-wrapper span {
+    font-size: 14px;
+    line-height: 1.3;
+
+    color: var(--text-muted, #7c8983);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.brand-description {
+    display: block;
+
+    max-width: 340px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: var(--text-muted, #718078);
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.brand-products {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 600;
+
+    color: var(--text-color);
+}
+
+.brand-products svg {
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.brand-status {
+    min-width: 96px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.brand-status.active {
+    background: rgba(78, 166, 116, 0.12);
+    color: var(--primary-color);
+}
+
+.brand-status.inactive {
+    background: rgba(120, 130, 125, 0.12);
+    color: #7b8580;
+}
+
+.brand-status-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.brand-date {
+    white-space: nowrap;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    color: var(--text-muted, #718078);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.brand-empty {
+    min-height: 380px;
+
+    padding: 44px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.brand-empty-icon {
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: var(--surface-secondary);
+    color: var(--primary-color);
+}
+
+.brand-empty h3 {
+    margin: 0;
+
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+.brand-empty p {
+    margin: 9px 0 0;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: var(--text-muted, #718078);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.brand-table-loading {
+    width: 100%;
+}
+
+.brand-skeleton-row {
+    height: 92px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 2fr 1fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 0 28px;
+
+    border-bottom: 1px solid var(--border-color, #edf1ef);
+}
+
+.brand-skeleton-row span {
+    height: 20px;
+
+    border-radius: 7px;
+
+    background: var(--surface-secondary);
+
+    animation:
+        brand-skeleton 1.2s ease-in-out infinite;
+}
+
+.brand-skeleton-row span:first-child {
+    width: 75%;
+    height: 48px;
+}
+
+@keyframes brand-skeleton {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   TABLE DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .brand-table td,
+html[data-theme="dark"] .brand-table th {
+    border-color: #293831;
+}
+
+html[data-theme="dark"] .brand-logo {
+    border-color: #31453a;
+}
+
+
+/* =========================================================
+   TABLE RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+    .brand-table th,
+    .brand-table td {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-table th,
+    .brand-table td {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}

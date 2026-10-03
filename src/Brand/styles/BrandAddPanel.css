@@ -1,0 +1,537 @@
+/* =========================================================
+   ADD BRAND PANEL
+========================================================= */
+
+.brand-add-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background: rgba(15, 25, 21, 0.28);
+
+    backdrop-filter: blur(2px);
+}
+
+.brand-add-panel {
+    width: 50%;
+    min-width: 480px;
+    max-width: 760px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--surface-color);
+
+    border-left: 1px solid rgba(78, 166, 116, 0.14);
+
+    box-shadow:
+        -14px 0 40px rgba(18, 52, 59, 0.12);
+
+    animation: brandAddPanelIn 0.22s ease-out;
+}
+
+@keyframes brandAddPanelIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.brand-add-header {
+    min-height: 92px;
+
+    padding: 22px 26px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border-bottom: 1px solid
+        rgba(78, 166, 116, 0.12);
+}
+
+.brand-add-header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-add-header span {
+    font-size: 12px;
+    font-weight: 600;
+
+    color: var(--primary-color);
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.brand-add-header h2 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+.brand-add-header p {
+    margin: 2px 0 0;
+
+    font-size: 13px;
+
+    color: var(--text-color);
+    opacity: 0.58;
+}
+
+.brand-add-close {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border: 0;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: var(--text-color);
+    background: var(--surface-secondary);
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.brand-add-close:hover {
+    color: var(--primary-color);
+
+    transform: rotate(4deg);
+}
+
+.brand-add-close:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.brand-add-body {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 26px;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.brand-add-preview {
+    min-height: 86px;
+
+    margin-bottom: 24px;
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border: 1px solid
+        rgba(78, 166, 116, 0.14);
+
+    border-radius: 14px;
+
+    background: var(--surface-secondary);
+}
+
+.brand-add-preview-logo {
+    width: 58px;
+    height: 58px;
+
+    min-width: 58px;
+    max-width: 58px;
+
+    flex: 0 0 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    color: var(--primary-color);
+
+    background: var(--surface-color);
+
+    border: 1px solid
+        rgba(78, 166, 116, 0.14);
+}
+
+.brand-add-preview-logo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    padding: 7px;
+}
+
+.brand-add-preview > div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.brand-add-preview strong {
+    color: var(--text-color);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.brand-add-preview span {
+    color: var(--text-color);
+
+    opacity: 0.52;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FIELDS
+========================================================= */
+
+.brand-add-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+.brand-add-field > span {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--text-color);
+}
+
+.brand-add-field input,
+.brand-add-field textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid
+        rgba(78, 166, 116, 0.16);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: var(--surface-secondary);
+    color: var(--text-color);
+
+    font: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.brand-add-field input {
+    height: 44px;
+
+    padding: 0 13px;
+}
+
+.brand-add-field textarea {
+    min-height: 100px;
+
+    padding: 12px 13px;
+
+    resize: vertical;
+}
+
+.brand-add-field input::placeholder,
+.brand-add-field textarea::placeholder {
+    color: var(--text-color);
+
+    opacity: 0.4;
+}
+
+.brand-add-field input:focus,
+.brand-add-field textarea:focus {
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 3px rgba(78, 166, 116, 0.1);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.brand-add-active {
+    min-height: 58px;
+
+    margin-top: 4px;
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid
+        rgba(78, 166, 116, 0.14);
+
+    border-radius: 12px;
+
+    background: var(--surface-secondary);
+}
+
+.brand-add-active > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.brand-add-active strong {
+    font-size: 13px;
+
+    color: var(--text-color);
+}
+
+.brand-add-active span {
+    font-size: 12px;
+
+    color: var(--text-color);
+
+    opacity: 0.5;
+}
+
+.brand-add-switch {
+    width: 42px;
+    height: 24px;
+
+    padding: 3px;
+
+    border: 0;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    background: var(--surface-color);
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(78, 166, 116, 0.16);
+
+    transition:
+        background 0.18s ease;
+}
+
+.brand-add-switch span {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--text-color);
+
+    opacity: 0.4;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease;
+}
+
+.brand-add-switch.active {
+    background: var(--primary-color);
+}
+
+.brand-add-switch.active span {
+    transform: translateX(18px);
+
+    background: #fff;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.brand-add-error {
+    margin-top: 16px;
+
+    padding: 11px 13px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    color: #b42318;
+
+    background: rgba(180, 35, 24, 0.08);
+
+    border: 1px solid
+        rgba(180, 35, 24, 0.14);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.brand-add-footer {
+    min-height: 78px;
+
+    padding: 16px 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    border-top: 1px solid
+        rgba(78, 166, 116, 0.12);
+
+    background: var(--surface-color);
+}
+
+.brand-add-cancel,
+.brand-add-save {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        opacity 0.18s ease;
+}
+
+.brand-add-cancel {
+    border: 1px solid
+        rgba(78, 166, 116, 0.16);
+
+    color: var(--text-color);
+
+    background: var(--surface-secondary);
+}
+
+.brand-add-cancel:hover {
+    border-color: var(--primary-color);
+}
+
+.brand-add-save {
+    border: 1px solid var(--primary-color);
+
+    color: #fff;
+
+    background: var(--primary-color);
+}
+
+.brand-add-save:hover {
+    background: var(--primary-color);
+
+    opacity: 0.9;
+}
+
+.brand-add-cancel:disabled,
+.brand-add-save:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .brand-add-overlay {
+    background: rgba(0, 0, 0, 0.48);
+}
+
+html[data-theme="dark"] .brand-add-panel {
+    box-shadow:
+        -14px 0 40px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+    .brand-add-panel {
+        width: 75%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-add-panel {
+        width: 100%;
+    }
+
+    .brand-add-header,
+    .brand-add-body,
+    .brand-add-footer {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}

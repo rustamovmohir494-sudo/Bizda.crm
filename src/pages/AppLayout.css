@@ -1,0 +1,41 @@
+.app-layout {
+  min-height: 100vh;
+  background: #f7f9f8;
+}
+
+/* Asosiy o'ng tomon */
+.app-main {
+  min-height: 100vh;
+  margin-left: 250px;
+  transition: margin-left 0.25s ease;
+}
+
+/* Sidebar yopilganda */
+.app-layout.sidebar-collapsed .app-main {
+  margin-left: 76px;
+}
+
+/* Content alohida scroll bo'ladi */
+.app-content {
+  height: calc(100vh - 68px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Header joyida turishi uchun */
+.app-main > header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .app-main {
+    margin-left: 220px;
+  }
+
+  .app-layout.sidebar-collapsed .app-main {
+    margin-left: 68px;
+  }
+}

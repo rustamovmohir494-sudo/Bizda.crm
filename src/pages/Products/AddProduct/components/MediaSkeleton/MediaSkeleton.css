@@ -1,0 +1,240 @@
+.media-skeleton {
+  width: 100%;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.media-skeleton-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.skeleton-back {
+  width: 100px;
+  height: 42px;
+
+  border-radius: 10px;
+}
+
+.skeleton-title {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.skeleton-title div {
+  width: 180px;
+  height: 22px;
+}
+
+.skeleton-title span {
+  width: 240px;
+  height: 12px;
+}
+
+.skeleton-count {
+  width: 75px;
+  height: 30px;
+
+  border-radius: 8px;
+}
+
+/* ================================
+   SKELETON BASE
+================================ */
+
+.skeleton-back,
+.skeleton-title div,
+.skeleton-title span,
+.skeleton-count,
+.skeleton-upload,
+.skeleton-line,
+.skeleton-inputs div,
+.skeleton-section,
+.skeleton-section-title,
+.skeleton-card,
+.skeleton-image,
+.skeleton-card-line {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 25%,
+    var(--surface-color) 50%,
+    var(--surface-secondary) 75%
+  );
+
+  background-size: 200% 100%;
+
+  animation:
+    mediaSkeleton 1.4s infinite;
+}
+
+/* ================================
+   UPLOAD SKELETON
+================================ */
+
+.skeleton-upload {
+  padding: 20px;
+
+  margin-bottom: 24px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+/* ================================
+   LINE
+================================ */
+
+.skeleton-line {
+  width: 180px;
+  height: 18px;
+
+  margin-bottom: 18px;
+
+  border-radius: 6px;
+}
+
+/* ================================
+   INPUTS
+================================ */
+
+.skeleton-inputs {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 1fr 120px;
+
+  gap: 13px;
+}
+
+.skeleton-inputs div {
+  height: 42px;
+
+  border-radius: 10px;
+}
+
+/* ================================
+   SECTION
+================================ */
+
+.skeleton-section {
+  padding: 20px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+.skeleton-section-title {
+  width: 150px;
+  height: 18px;
+
+  margin-bottom: 18px;
+
+  border-radius: 6px;
+}
+
+/* ================================
+   GRID
+================================ */
+
+.skeleton-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(190px, 1fr)
+    );
+
+  gap: 16px;
+}
+
+/* ================================
+   CARD
+================================ */
+
+.skeleton-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+
+/* ================================
+   IMAGE
+================================ */
+
+.skeleton-image {
+  height: 190px;
+}
+
+/* ================================
+   CARD LINE
+================================ */
+
+.skeleton-card-line {
+  width: 70%;
+  height: 14px;
+
+  margin: 14px;
+
+  border-radius: 5px;
+}
+
+/* ================================
+   ANIMATION
+================================ */
+
+@keyframes mediaSkeleton {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ================================
+   DARK MODE
+================================ */
+
+html[data-theme="dark"] .skeleton-back,
+html[data-theme="dark"] .skeleton-title div,
+html[data-theme="dark"] .skeleton-title span,
+html[data-theme="dark"] .skeleton-count,
+html[data-theme="dark"] .skeleton-upload,
+html[data-theme="dark"] .skeleton-line,
+html[data-theme="dark"] .skeleton-inputs div,
+html[data-theme="dark"] .skeleton-section,
+html[data-theme="dark"] .skeleton-section-title,
+html[data-theme="dark"] .skeleton-card,
+html[data-theme="dark"] .skeleton-image,
+html[data-theme="dark"] .skeleton-card-line {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 25%,
+    var(--surface-color) 50%,
+    var(--surface-secondary) 75%
+  );
+
+  background-size: 200% 100%;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 850px) {
+  .skeleton-inputs {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,38 @@
+.theme-toggle {
+  width: 30px;
+  height: 20px;
+  border: 0;
+  border-radius: 12px;
+
+  background: #eaf6ed;
+  color: #4ea674;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #dff1e5;
+}
+
+.theme-toggle:active {
+  transform: scale(0.94);
+}
+
+.theme-toggle.dark {
+  background: #293a32;
+  color: #75d19c;
+}
+
+.theme-toggle.dark:hover {
+  background: #34483e;
+}
+
